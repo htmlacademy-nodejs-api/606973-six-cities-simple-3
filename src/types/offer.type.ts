@@ -1,17 +1,17 @@
 import { City } from './city.type';
+import { Housing } from './housing.type';
 
 export type Offer = {
   title: string,
   description: string,
   postDate: Date;
-  bedrooms: number,
   city: City,
   previewImage: string,
   images: string[],
   isPremium: boolean,
   rating: number,
-  type: string,
-  roomsCount: number,
+  type: Housing,
+  bedrooms: number,
   maxAdults: number,
   price: number,
   goods: string[],
