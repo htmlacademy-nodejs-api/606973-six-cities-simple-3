@@ -1,5 +1,4 @@
 import { readFileSync } from 'fs';
-import { OfferType } from '../../types/offer-type.enum.js';
 import { Offer } from '../../types/offer.type.js';
 import { FileReaderInterface } from './file-reader.interface.js';
 
@@ -21,11 +20,13 @@ export default class TSVFileReader implements FileReaderInterface {
       .split('\n')
       .filter((row) => row.trim() !== '')
       .map((line) => line.split('\t'))
-      .map(([title, description, createdDate, image, type, price, categories, firstname, lastname, email, avatarPath]) => ({
+      .map(([title, description, createdDate, city, previewImage, images, type, price, categories, firstname, lastname, email, avatarPath]) => ({
         title,
         description,
         postDate: new Date(createdDate),
-        image,
+        city,
+        previewImage,
+        images,
         type: OfferType[type as 'Buy' | 'Sell'],
         categories: categories.split(';')
           .map((name) => ({name})),
