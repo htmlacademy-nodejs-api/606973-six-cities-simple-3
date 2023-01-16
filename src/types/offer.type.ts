@@ -1,9 +1,11 @@
+import { City } from './city.type';
+
 export type Offer = {
   title: string,
   description: string,
   postDate: Date;
   bedrooms: number,
-  city: 'Paris' | 'Cologne ' | 'Brussels ' | 'Amsterdam ' | 'Hamburg' | 'Dusseldorf ',
+  city: City,
   previewImage: string,
   images: string[],
   isPremium: boolean,
