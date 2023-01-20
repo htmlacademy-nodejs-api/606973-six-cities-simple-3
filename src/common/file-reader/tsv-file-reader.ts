@@ -32,3 +32,4 @@ export default class TSVFileReader extends EventEmitter implements FileReaderInt
     this.emit('end', importedRowCount);
   }
 }
+

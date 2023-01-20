@@ -48,9 +48,9 @@ export default class OfferGenerator implements OfferGeneratorInterface {
     const [firstname, lastname] = name.split(' ');
 
     return [
-      title, description, postDate, city, previewImage, images, 
-      isPremium, rating, type, bedrooms, maxAdults, 
-      price, goods, avatar, isPro, firstname, lastname, mail, latitude, 
+      title, description, postDate, city, previewImage, images,
+      isPremium, rating, type, bedrooms, maxAdults,
+      price, goods, avatar, isPro, firstname, lastname, mail, latitude,
       longitude
     ].join('\t');
   }

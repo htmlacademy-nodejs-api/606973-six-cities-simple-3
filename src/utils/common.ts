@@ -1,6 +1,6 @@
-import { City } from "../types/city.type";
-import { Housing } from "../types/housing.type";
-import { Offer } from "../types/offer.type";
+import { City } from '../types/city.type';
+import { Housing } from '../types/housing.type';
+import { Offer } from '../types/offer.type';
 
 export const createOffer = (row: string) => {
   const tokens = row.replace('\n', '').split('\t');
