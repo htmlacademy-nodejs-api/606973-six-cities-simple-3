@@ -8,5 +8,5 @@ export type MockData = {
   goods: string[],
   avatarUrls: string[],
   names: string[],
-  mails: string[]
+  mails: string[],
 }
