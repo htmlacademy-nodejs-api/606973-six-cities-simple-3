@@ -1,5 +1,5 @@
+import dayjs from 'dayjs';
 import { MockData } from '../../types/mock-data.type.js';
-// import { OfferType } from '../../types/offer-type.enum.js';
 import { generateRandomValue, getRandomItem, getRandomItems } from '../../utils/random.js';
 import { OfferGeneratorInterface } from './offer-generator.interface.js';
 
@@ -16,7 +16,10 @@ const MIN_ADULTS = 1;
 const MAX_ADULTS = 7;
 
 const MIN_COORDINATE = 1;
-const MAX_COORDINATE = 50
+const MAX_COORDINATE = 50;
+
+const FIRST_WEEK_DAY = 1;
+const LAST_WEEK_DAY = 7;
 
 export default class OfferGenerator implements OfferGeneratorInterface {
   constructor(private readonly mockData: MockData) {}
@@ -24,6 +27,7 @@ export default class OfferGenerator implements OfferGeneratorInterface {
   public generate(): string {
     const title = getRandomItem<string>(this.mockData.titles);
     const description = getRandomItem<string>(this.mockData.descriptions);
+    const postDate = dayjs().subtract(generateRandomValue(FIRST_WEEK_DAY, LAST_WEEK_DAY), 'day').toISOString();
     const city = getRandomItem<string>(this.mockData.cities);
     const previewImage = getRandomItem<string>(this.mockData.previewImages);
     const images = getRandomItems<string>(this.mockData.images).join(';');
@@ -44,7 +48,7 @@ export default class OfferGenerator implements OfferGeneratorInterface {
     const [firstname, lastname] = name.split(' ');
 
     return [
-      title, description, city, previewImage, images, 
+      title, description, postDate, city, previewImage, images, 
       isPremium, rating, type, bedrooms, maxAdults, 
       price, goods, avatar, isPro, firstname, lastname, mail, latitude, 
       longitude
