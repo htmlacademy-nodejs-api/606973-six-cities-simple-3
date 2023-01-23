@@ -1,29 +1,30 @@
-export enum PriceRange {
+export const enum PriceRange {
   MIN = 1000,
   MAX = 30000
 }
 
-export enum RatingRange {
+export const enum RatingRange {
   MIN = 0,
   MAX = 5
 }
 
-export enum BedroomsRange {
+export const enum BedroomsRange {
   MIN = 1,
   MAX = 7
 }
 
-export enum AdultsRange {
+export const enum AdultsRange {
   MIN = 1,
   MAX = 7
 }
 
-export enum CoordinatesRange {
+export const enum CoordinatesRange {
   MIN = 1,
   MAX = 50
 }
 
-export enum WeekDay {
+export const enum WeekDay {
   First = 1,
   Last = 7
 }
+
